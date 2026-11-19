@@ -1,67 +1,58 @@
-@a<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anuj Gour - Portfolio</title>
+<title>Anuj Gour - My Website</title>
 <style>
-body{margin:0;font-family:Arial;background:#0f172a;color:white;text-align:center;overflow-x:hidden}
-.box{padding:30px 20px;position:relative;z-index:2}
-h1{font-size:28px;margin:10px 0}
-p{color:#cbd5e1}
-span{color:#facc15}
-.btn{display:block;background:#e1306c;color:white;padding:15px;margin:12px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:18px}
-.btn2{background:#25D366}
-.btn3{background:white;color:black}
-.btn4{background:#FF0000}
-.card{background:#1e293b;padding:20px;margin:12px;border-radius:15px;text-align:left}
-img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid #facc15}
-.gallery img{width:110px;height:140px;border-radius:15px;border:2px solid white;margin:5px;object-fit:cover}
-input,textarea{width:90%;padding:12px;margin:8px;border-radius:10px;border:none;font-size:15px}
-.send{background:#facc15;color:black;padding:12px 25px;border:none;border-radius:25px;font-weight:bold;font-size:16px}
-/* GULAB BARSAT */
-.rose{position:fixed;top:-50px;z-index:999;font-size:28px;animation:fall linear forwards;pointer-events:none}
-@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0.9}}
+body{margin:0;font-family:Arial;background:#111;color:white;text-align:center;overflow-x:hidden}
+.header{padding:30px 10px;background:linear-gradient(180deg,#ff0055,#111)}
+.header img{width:140px;height:140px;border-radius:50%;border:4px solid white;object-fit:cover}
+.header h1{margin:10px 0 5px;font-size:28px}
+.header p{color:#ffd6e7;margin:5px}
+.btn{display:inline-block;margin:8px;padding:12px 22px;border-radius:30px;color:white;text-decoration:none;font-weight:bold}
+.insta{background:#e1306c}.yt{background:#ff0000}
+.card{background:#1e1e1e;margin:15px;border-radius:15px;padding:20px;text-align:left}
+.card h3{color:#ff4d88;margin-top:0}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.photos img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+input,textarea{width:94%;padding:12px;margin:8px 0;border-radius:10px;border:none;outline:none;font-size:15px}
+.send{background:#ffcc00;border:none;padding:13px 25px;border-radius:30px;font-weight:bold;font-size:16px;width:100%}
+.rose{position:fixed;top:-30px;animation:fall linear forwards;z-index:999;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
 </style>
 </head>
 <body>
-<div id="rain"></div>
-<div class="box">
-<img src="Polish_20241108_185934440.jpg">
-<p>NAMASTE 🙏</p>
-<h1>I Am <span>Anuj Gour</span></h1>
-<p>Bhopal, Madhya Pradesh | Student | Creator | Learner</p>
 
-<a class="btn" href="https://instagram.com/abhishek_gour_221">Instagram Follow Karo</a>
-<a class="btn btn2" href="https://wa.me/919340535129">WhatsApp Karo</a>
-<a class="btn btn3" href="https://github.com/Anujgour242">Mera GitHub</a>
-<a class="btn btn4" href="https://youtube.com/@AbhishekGour-f7y">▶️ YouTube - Smart Abhishek Gour (1.15k)</a>
-
-<div class="card">
-<h3>❤️ Mere Baare Me</h3>
-<p>Main Anuj hu, Bhopal se. Mujhe nayi cheeze seekhna aur website banana pasand hai. Ye meri pehli live website hai.</p>
+<div class="header">
+<img src="profile.jpg">
+<h1>Anuj Gour ❤️</h1>
+<p>Indore | Instagram Star | Reels Creator</p>
+<a class="btn insta" href="https://instagram.com/abhishek_gour_221">📸 Instagram</a>
+<a class="btn yt" href="https://youtube.com/@AbhishekGour-f7y">▶️ YouTube</a>
 </div>
 
 <div class="card">
-<h3>⭐ Meri Skills</h3>
-<p>🌐 HTML Website • 💻 GitHub • 📸 Instagram Content • 🚀 Learning New Tech</p>
+<h3>👋 About Me</h3>
+<p>Hi! Main Anuj Gour hu. Mujhe Reels banana, Style aur Photography pasand hai. Follow karo aur support karo! ❤️</p>
 </div>
 
 <div class="card">
-<h3>📸 Photo Gallery</h3>
-<div class="gallery">
-<img src="IMG-20261118-WA0044.jpg">
-<img src="IMG-20261118-WA0047.jpg">
-<img src="IMG-20261118-WA0045.jpg">
-<img src="IMG-20261118-WA0046.jpg">
+<h3>📸 Meri Best Photos ❤️</h3>
+<div class="photos">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
 </div>
-<p style="font-size:13px;">Meri Best Photos ❤️</p>
 </div>
 
 <div class="card">
 <h3>🎵 Mere Favourite Reels / Songs</h3>
-<p>🎶 1. Apna Favourite Song Yaha Likho<br><br>
-🎶 2. Dusra Song Yaha Likho<br><br>
-<a href="https://youtube.com/@AbhishekGour-f7y" style="color:#facc15;">👉 Mere YouTube Videos Dekho</a></p>
+<p>
+<a href="https://youtube.com/@AbhishekGour-f7y" style="color:#facc15;text-decoration:none;font-weight:bold;">🎶 1. Mera Favourite Gaana 1 ▶️</a><br><br>
+<a href="https://youtube.com/@AbhishekGour-f7y" style="color:#facc15;text-decoration:none;font-weight:bold;">🎶 2. Mera Favourite Gaana 2 ▶️</a><br><br>
+<a href="https://youtube.com/@AbhishekGour-f7y" style="color:#facc15;">👉 Mere YouTube Videos Dekho</a>
+</p>
 </div>
 
 <div class="card">
@@ -83,24 +74,24 @@ function sendWhatsApp(){
     return;
   }
   var fullMsg = "Hi Anuj! Mera naam " + naam + " hai. Mera Number: " + num + " hai. Message: " + msg;
-  var link = "https://wa.me/919340535129?text=" + encodeURIComponent(fullMsg);
+  var link = "https://api.whatsapp.com/send?phone=919340535129&text=" + encodeURIComponent(fullMsg);
   window.open(link, '_blank');
 }
+
+// Gulab ki pankhudi 2 second tak
+var startTime = Date.now();
+var roseInterval = setInterval(function(){
+  if(Date.now() - startTime > 2000){ clearInterval(roseInterval); return; }
+  var r = document.createElement('div');
+  r.className = 'rose';
+  r.innerHTML = '🌹';
+  r.style.left = Math.random()*100 + 'vw';
+  r.style.fontSize = (18 + Math.random()*15) + 'px';
+  r.style.animationDuration = (2 + Math.random()*2) + 's';
+  document.body.appendChild(r);
+  setTimeout(()=>{ r.remove(); }, 4000);
+}, 200);
 </script>
-function createRose(){
-  var rose = document.createElement('div');
-  rose.className = 'rose';
-  var flowers = ['🌹','🌹','🌹','🌸','🌺','❤️','🌹'];
-  rose.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
-  rose.style.left = Math.random()*100 + 'vw';
-  rose.style.fontSize = (20 + Math.random()*25) + 'px';
-  rose.style.animationDuration = '2s';
-  document.getElementById('rain').appendChild(rose);
-  setTimeout(()=>{ rose.remove(); }, 2500);
-}
-var barsat = setInterval(createRose, 150);
-setTimeout(()=>{ clearInterval(barsat); }, 6000);
-setTimeout(()=>{ document.getElementById('rain').innerHTML=''; }, 8500);
-</script>
+
 </body>
 </html>
