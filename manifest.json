@@ -1,22 +1,18 @@
 {
   "name": "Anuj Gour - Music",
   "short_name": "Anuj Gour",
-  "start_url": "./index.html",
+  "id": "/my-website/",
+  "start_url": "/my-website/",
+  "scope": "/my-website/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
       "src": "IMG-20261118-WA0044.jpg",
-      "sizes": "192x192",
+      "sizes": "any",
       "type": "image/jpeg",
-      "purpose": "any"
-    },
-    {
-      "src": "IMG-20261118-WA0044.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ]
 }
