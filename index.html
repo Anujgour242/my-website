@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@a<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,17 +66,27 @@ input,textarea{width:90%;padding:12px;margin:8px;border-radius:10px;border:none;
 
 <div class="card">
 <h3>📞 Contact Karo</h3>
-<input type="text" placeholder="Tumhara Naam">
-<input type="text" placeholder="Tumhara Number">
-<textarea placeholder="Message Likho..."></textarea>
+<input id="cName" type="text" placeholder="Tumhara Naam">
+<input id="cNumber" type="text" placeholder="Tumhara Number">
+<textarea id="cMsg" placeholder="Message Likho..."></textarea>
 <br>
-<a href="https://wa.me/919340535129"><button class="send">WhatsApp Pe Bhejo</button></a>
-</div>
-
-<p style="margin-top:30px;font-size:13px;">Made with ❤️ by Anuj Gour</p>
+<button class="send" onclick="sendWhatsApp()">WhatsApp Pe Bhejo</button>
 </div>
 
 <script>
+function sendWhatsApp(){
+  var naam = document.getElementById('cName').value;
+  var num = document.getElementById('cNumber').value;
+  var msg = document.getElementById('cMsg').value;
+  if(naam == "" || msg == ""){
+    alert("Bhai pehle Naam aur Message to likh de!");
+    return;
+  }
+  var fullMsg = "Hi Anuj! Mera naam " + naam + " hai. Mera Number: " + num + " hai. Message: " + msg;
+  var link = "https://wa.me/919340535129?text=" + encodeURIComponent(fullMsg);
+  window.open(link, '_blank');
+}
+</script>
 function createRose(){
   var rose = document.createElement('div');
   rose.className = 'rose';
