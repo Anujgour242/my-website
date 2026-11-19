@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anuj Gour - Portfolio</title>
 <style>
-body{margin:0;font-family:Arial;background:#0f172a;color:white;text-align:center}
-.box{padding:30px 20px}
+body{margin:0;font-family:Arial;background:#0f172a;color:white;text-align:center;overflow-x:hidden}
+.box{padding:30px 20px;position:relative;z-index:2}
 h1{font-size:28px;margin:10px 0}
 p{color:#cbd5e1}
 span{color:#facc15}
@@ -18,9 +19,13 @@ img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid
 .gallery img{width:110px;height:140px;border-radius:15px;border:2px solid white;margin:5px;object-fit:cover}
 input,textarea{width:90%;padding:12px;margin:8px;border-radius:10px;border:none;font-size:15px}
 .send{background:#facc15;color:black;padding:12px 25px;border:none;border-radius:25px;font-weight:bold;font-size:16px}
+/* GULAB BARSAT */
+.rose{position:fixed;top:-50px;z-index:999;font-size:28px;animation:fall linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0.9}}
 </style>
 </head>
 <body>
+<div id="rain"></div>
 <div class="box">
 <img src="Polish_20241108_185934440.jpg">
 <p>NAMASTE 🙏</p>
@@ -71,5 +76,21 @@ input,textarea{width:90%;padding:12px;margin:8px;border-radius:10px;border:none;
 
 <p style="margin-top:30px;font-size:13px;">Made with ❤️ by Anuj Gour</p>
 </div>
+
+<script>
+function createRose(){
+  var rose = document.createElement('div');
+  rose.className = 'rose';
+  var flowers = ['🌹','🌹','🌹','🌸','🌺','❤️','🌹'];
+  rose.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
+  rose.style.left = Math.random()*100 + 'vw';
+  rose.style.fontSize = (20 + Math.random()*25) + 'px';
+  rose.style.animationDuration = (2.5 + Math.random()*3) + 's';
+  document.getElementById('rain').appendChild(rose);
+  setTimeout(()=>{ rose.remove(); }, 6000);
+}
+setInterval(createRose, 250);
+for(let i=0;i<15;i++){ setTimeout(createRose, i*200); }
+</script>
 </body>
 </html>
