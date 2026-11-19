@@ -94,6 +94,11 @@ var roseInterval = setInterval(function(){
   setTimeout(()=>{ r.remove(); }, 4000);
 }, 200);
 </script>
-
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
 </body>
 </html>
