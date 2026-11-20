@@ -7,15 +7,15 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "IMG-20261120-WA0266.jpg",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "IMG-20261120-WA0268.jpg",
+      "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     }
   ]
