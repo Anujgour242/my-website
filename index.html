@@ -67,17 +67,26 @@ input,textarea{width:94%;padding:12px;margin:8px 0;border-radius:10px;border:non
 </div>
 
 <script>
-function sendWhatsApp(){
-  var naam = document.getElementById('cName').value;
-  var num = document.getElementById('cNumber').value;
-  var msg = document.getElementById('cMsg').value;
-  if(naam == "" || msg == ""){
-    alert("Bhai pehle Naam aur Message to likh de!");
-    return;
+function sendWhatsApp() {
+  let name = document.getElementById('name').value;
+  let number = document.getElementById('number').value;
+  let msg = document.getElementById('message').value;
+
+  // Number saaf karo - space, + , - sab hata do
+  number = number.replace(/[^0-9]/g, '');
+
+  // Agar 12 digit hai aur 91 se shuru hai, to 91 hata do
+  if (number.length == 12 && number.startsWith('91')) {
+    number = number.substring(2);
   }
-  var fullMsg = "Hi Anuj! Mera naam " + naam + " hai. Mera Number: " + num + " hai. Message: " + msg;
-  var link = "https://api.whatsapp.com/send?phone=919340535129&text=" + encodeURIComponent(fullMsg);
-  window.open(link, '_blank');
+  // Agar 10 digit hai, to aage 91 laga do
+  if (number.length == 10) {
+    number = '91' + number;
+  }
+
+  let text = "Hi, Main " + name + " hu. " + msg;
+  let url = "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
+  window.open(url, '_blank');
 }
 
 // Gulab ki pankhudi 2 second tak
