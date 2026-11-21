@@ -63,14 +63,14 @@ input,textarea{width:94%;padding:12px;margin:8px 0;border-radius:10px;border:non
 <input id="cNumber" type="text" placeholder="Tumhara Number">
 <textarea id="cMsg" placeholder="Message Likho..."></textarea>
 <br>
-<button class="send" onclick="sendWhatsApp()">WhatsApp Pe Bhejo</button>
+<button type="<button" class="send" onclick="sendWhatsApp()">WhatsApp Pe Bhejo</button>
 </div>
 
 <script>
 function sendWhatsApp() {
-  let name = document.getElementById('name').value;
-  let number = document.getElementById('number').value;
-  let msg = document.getElementById('message').value;
+let name = document.getElementById('cName').value;
+let number = document.getElementById('cNumber').value;
+let msg = document.getElementById('cMsg').value;
 
   // Number saaf karo - space, + , - sab hata do
   number = number.replace(/[^0-9]/g, '');
