@@ -111,3 +111,138 @@ if ('serviceWorker' in navigator) {
 </body>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuj Gour - Login</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f172a;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:15px}
+.box{background:#fff;width:100%;max-width:380px;padding:25px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+h2{text-align:center;color:#0f172a;margin-bottom:5px}
+p.sub{text-align:center;color:#666;font-size:13px;margin-bottom:20px}
+input{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;font-size:15px}
+button{width:100%;padding:12px;background:#2563eb;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:10px}
+button:hover{background:#1d4ed8}
+.link{text-align:center;margin-top:15px;font-size:14px;color:#2563eb;cursor:pointer}
+.hidden{display:none}
+#msg{text-align:center;font-size:13px;margin-top:10px;color:red}
+.success{color:green !important}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logout{background:#ef4444;padding:7px 12px;width:auto;font-size:13px}
+</style>
+</head>
+<body>
+
+<!-- LOGIN BOX -->
+<div class="box" id="loginBox">
+  <h2>Welcome Back 👋</h2>
+  <p class="sub">Anuj Gour Website - Login Karo</p>
+  <input type="tel" id="loginNumber" placeholder="Mobile Number (ID) - 10 Digit" maxlength="10">
+  <input type="password" id="loginPass" placeholder="Password Daloo">
+  <button onclick="login()">LOGIN</button>
+  <div id="msg"></div>
+  <div class="link" onclick="showBox('signupBox')">Naya ho? Yaha Signup Karo</div>
+  <div class="link" onclick="showBox('changeBox')">Password Change Karna Hai?</div>
+</div>
+
+<!-- SIGNUP BOX -->
+<div class="box hidden" id="signupBox">
+  <h2>Signup Karo</h2>
+  <p class="sub">Apni ID Banao</p>
+  <input type="text" id="suName" placeholder="Pura Naam">
+  <input type="tel" id="suNumber" placeholder="Mobile Number (Yahi ID Banega)" maxlength="10">
+  <input type="date" id="suDob" placeholder="Birthday Date">
+  <input type="password" id="suPass" placeholder="New Password Banao">
+  <input type="password" id="suPass2" placeholder="Password Fir Se Daloo">
+  <button onclick="signup()">SIGNUP - ID BANAO</button>
+  <div id="msg2"></div>
+  <div class="link" onclick="showBox('loginBox')">Pehle se ID hai? Login Karo</div>
+</div>
+
+<!-- CHANGE PASSWORD BOX -->
+<div class="box hidden" id="changeBox">
+  <h2>Password Change</h2>
+  <p class="sub">Purana Wala Daal Ke Naya Banao</p>
+  <input type="tel" id="chNumber" placeholder="Mobile Number (ID)" maxlength="10">
+  <input type="password" id="chOld" placeholder="Purana Password">
+  <input type="password" id="chNew" placeholder="Naya Password">
+  <button onclick="changePass()">PASSWORD CHANGE KARO</button>
+  <div id="msg3"></div>
+  <div class="link" onclick="showBox('loginBox')">Wapas Login Pe Jao</div>
+</div>
+
+<!-- HOME / DASHBOARD BOX -->
+<div class="box hidden" id="homeBox">
+  <div class="top">
+    <h2>Namaste 🙏</h2>
+    <button class="logout" onclick="logout()">Logout</button>
+  </div>
+  <p class="sub" id="welcomeText"></p>
+  <p style="text-align:center;margin-top:15px">Tum Anuj Gour ki website me login ho gaye ho!</p>
+</div>
+
+<script>
+function showBox(id){
+  ['loginBox','signupBox','changeBox','homeBox'].forEach(b=>document.getElementById(b).classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+
+function getUsers(){ return JSON.parse(localStorage.getItem('anuj_users')||'{}'); }
+function saveUsers(u){ localStorage.setItem('anuj_users', JSON.stringify(u)); }
+
+// SIGNUP
+function signup(){
+  let name=document.getElementById('suName').value.trim();
+  let num=document.getElementById('suNumber').value.trim();
+  let dob=document.getElementById('suDob').value;
+  let p1=document.getElementById('suPass').value;
+  let p2=document.getElementById('suPass2').value;
+  let msg=document.getElementById('msg2');
+  if(!name || !num || !dob || !p1){ msg.innerText="Saare box bharo!"; return; }
+  if(num.length!==10){ msg.innerText="Number 10 digit ka hona chahiye!"; return; }
+  if(p1!==p2){ msg.innerText="Dono password same nahi hai!"; return; }
+  let users=getUsers();
+  if(users[num]){ msg.innerText="Ye Number pehle se bana hua hai! Login karo."; return; }
+  users[num]={name:name, dob:dob, pass:p1};
+  saveUsers(users);
+  msg.className="success"; msg.innerText="ID Ban Gayi! Ab Login Karo.";
+  setTimeout(()=>showBox('loginBox'),1000);
+}
+
+// LOGIN
+function login(){
+  let num=document.getElementById('loginNumber').value.trim();
+  let pass=document.getElementById('loginPass').value;
+  let msg=document.getElementById('msg');
+  let users=getUsers();
+  if(users[num] && users[num].pass===pass){
+    document.getElementById('welcomeText').innerText="Name: "+users[num].name+" | Number: "+num+" | Birthday: "+users[num].dob;
+    showBox('homeBox');
+  } else {
+    msg.innerText="Galat ID ya Password! Pehle Signup karo.";
+  }
+
+// CHANGE PASSWORD
+function changePass(){
+  let num=document.getElementById('chNumber').value.trim();
+  let oldP=document.getElementById('chOld').value;
+  let newP=document.getElementById('chNew').value;
+  let msg=document.getElementById('msg3');
+  let users=getUsers();
+  if(!users[num]){ msg.innerText="Ye ID bani hi nahi hai! Pehle Signup karo."; return; }
+  if(users[num].pass!==oldP){ msg.innerText="Purana password galat hai!"; return; }
+  if(!newP){ msg.innerText="Naya password daalo!"; return; }
+  users[num].pass=newP;
+  saveUsers(users);
+  msg.className="success"; msg.innerText="Password Change Ho Gaya! Ab naye se Login karo.";
+  setTimeout(()=>showBox('loginBox'),1000);
+}
+
+function logout(){ showBox('loginBox'); }
+</script>
+</body>
+</html>
