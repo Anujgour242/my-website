@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anuj Gour - My Website</title>
+<title>Anuj Gour ❤️</title>
 <style>
 body{margin:0;font-family:Arial;background:#111;color:white;text-align:center;overflow-x:hidden}
 .header{padding:30px 10px;background:linear-gradient(180deg,#ff0055,#111)}
@@ -16,173 +14,88 @@ body{margin:0;font-family:Arial;background:#111;color:white;text-align:center;ov
 .card{background:#1e1e1e;margin:15px;border-radius:15px;padding:20px;text-align:left}
 .card h3{color:#ff4d88;margin-top:0}
 .photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.photos img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+.photos img{width:100%;height:180px;object-fit:cover;border-radius:10px}
 input,textarea{width:94%;padding:12px;margin:8px 0;border-radius:10px;border:none;outline:none;font-size:15px}
 .send{background:#ffcc00;border:none;padding:13px 25px;border-radius:30px;font-weight:bold;font-size:16px;width:100%}
 .rose{position:fixed;top:-30px;animation:fall linear forwards;z-index:999;pointer-events:none}
 @keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
-</style>
-</head>
-<body>
-
-<div class="header">
-<img src="IMG-20261118-WA0044.jpg">
-<h1>Anuj Gour ❤️</h1>
-<p>Indore | Instagram Star | Reels Creator</p>
-<a class="btn insta" href="https://instagram.com/abhishek_gour_221"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Instagram</a>
-<a class="btn yt" href="https://youtube.com/@AbhishekGour-f7y"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> YouTube</a>
-</div>
-
-<div class="card">
-<h3>👋 About Me</h3>
-<p>Hi! Main Anuj Gour hu. Mujhe Reels banana, Style aur Photography pasand hai. Follow karo aur support karo! ❤️</p>
-</div>
-
-<div class="card">
-<h3>📸 Meri Best Photos ❤️</h3>
-<div class="photos">
-<img src="IMG-20261118-WA0044.jpg">
-<img src="IMG-20261118-WA0047.jpg">
-<img src="IMG-20261118-WA0045.jpg">
-<img src="IMG-20261118-WA0046.jpg">
-</div>
-</div>
-
-<div class="card">
-<h3>🎵 Mere Favourite Reels / Songs</h3>
-<p>
-<a href="https://youtube.com/@AbhishekGour-f7y" style="color:#facc15;text-decoration:none;font-weight:bold;">🎶 1. Mera Favourite Gaana 1 ▶️</a><br><br>
-<a href="https://youtube.com/@AbhishekGour-f7y" style="color:#facc15;text-decoration:none;font-weight:bold;">🎶 2. Mera Favourite Gaana 2 ▶️</a><br><br>
-<a href="https://youtube.com/@AbhishekGour-f7y" style="color:#facc15;">👉 Mere YouTube Videos Dekho</a>
-</p>
-</div>
-
-<div class="card">
-<h3>📞 Contact Karo</h3>
-<input id="cName" type="text" placeholder="Tumhara Naam">
-<input id="cNumber" type="text" placeholder="Tumhara Number">
-<textarea id="cMsg" placeholder="Message Likho..."></textarea>
-<br>
-<button type="<button" class="send" onclick="sendWhatsApp()">WhatsApp Pe Bhejo</button>
-</div>
-
-<script>
-function sendWhatsApp() {
-let name = document.getElementById('cName').value;
-let number = document.getElementById('cNumber').value;
-let msg = document.getElementById('cMsg').value;
-
-  // Number saaf karo - space, + , - sab hata do
-  number = number.replace(/[^0-9]/g, '');
-
-  // Agar 12 digit hai aur 91 se shuru hai, to 91 hata do
-  if (number.length == 12 && number.startsWith('91')) {
-    number = number.substring(2);
-  }
-  // Agar 10 digit hai, to aage 91 laga do
-  if (number.length == 10) {
-    number = '91' + number;
-  }
-
-  let text = "Hi, Main " + name + " hu. " + msg;
-  let url = "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
-  window.open(url, '_blank');
-}
-
-// Gulab ki pankhudi 2 second tak
-var startTime = Date.now();
-var roseInterval = setInterval(function(){
-  if(Date.now() - startTime > 2000){ clearInterval(roseInterval); return; }
-  var r = document.createElement('div');
-  r.className = 'rose';
-  r.innerHTML = '🌹';
-  r.style.left = Math.random()*100 + 'vw';
-  r.style.fontSize = (18 + Math.random()*15) + 'px';
-  r.style.animationDuration = (2 + Math.random()*2) + 's';
-  document.body.appendChild(r);
-  setTimeout(()=>{ r.remove(); }, 4000);
-}, 200);
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js');
-}
-</script>
-</body>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anuj Gour - Login</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f172a;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:15px}
-.box{background:#fff;width:100%;max-width:380px;padding:25px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-h2{text-align:center;color:#0f172a;margin-bottom:5px}
-p.sub{text-align:center;color:#666;font-size:13px;margin-bottom:20px}
-input{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;font-size:15px}
-button{width:100%;padding:12px;background:#2563eb;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:10px}
-button:hover{background:#1d4ed8}
-.link{text-align:center;margin-top:15px;font-size:14px;color:#2563eb;cursor:pointer}
+/* Login wala box */
+.loginbox{background:#fff;color:#000;max-width:380px;margin:30px auto;padding:25px;border-radius:15px;text-align:center}
+.loginbox input{border:1px solid #ddd}
+.loginbox button{width:100%;padding:12px;background:#2563eb;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:bold;margin-top:10px}
+.link{color:#2563eb;font-size:14px;margin-top:14px;cursor:pointer}
 .hidden{display:none}
-#msg{text-align:center;font-size:13px;margin-top:10px;color:red}
-.success{color:green !important}
-.top{display:flex;justify-content:space-between;align-items:center}
-.logout{background:#ef4444;padding:7px 12px;width:auto;font-size:13px}
+#msg,#msg2,#msg3{font-size:13px;color:red;margin-top:8px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px;background:#000}
+.logout{background:#ef4444;color:#fff;border:none;padding:7px 14px;border-radius:8px}
 </style>
 </head>
 <body>
 
-<!-- LOGIN BOX -->
-<div class="box" id="loginBox">
-  <h2>Welcome Back 👋</h2>
-  <p class="sub">Anuj Gour Website - Login Karo</p>
-  <input type="tel" id="loginNumber" placeholder="Mobile Number (ID) - 10 Digit" maxlength="10">
-  <input type="password" id="loginPass" placeholder="Password Daloo">
+<!-- LOGIN -->
+<div id="loginBox" class="loginbox">
+  <h2>Login Karo 👋</h2>
+  <p>Anuj Gour Website me Entry ke liye</p>
+  <input type="tel" id="loginNumber" placeholder="Mobile Number (ID)" maxlength="10">
+  <input type="password" id="loginPass" placeholder="Password">
   <button onclick="login()">LOGIN</button>
   <div id="msg"></div>
-  <div class="link" onclick="showBox('signupBox')">Naya ho? Yaha Signup Karo</div>
+  <div class="link" onclick="showBox('signupBox')">Naya ho? Signup Karo</div>
   <div class="link" onclick="showBox('changeBox')">Password Change Karna Hai?</div>
 </div>
 
-<!-- SIGNUP BOX -->
-<div class="box hidden" id="signupBox">
+<!-- SIGNUP -->
+<div id="signupBox" class="loginbox hidden">
   <h2>Signup Karo</h2>
-  <p class="sub">Apni ID Banao</p>
+  <p>Apni ID Banao</p>
   <input type="text" id="suName" placeholder="Pura Naam">
   <input type="tel" id="suNumber" placeholder="Mobile Number (Yahi ID Banega)" maxlength="10">
-  <input type="date" id="suDob" placeholder="Birthday Date">
-  <input type="password" id="suPass" placeholder="New Password Banao">
-  <input type="password" id="suPass2" placeholder="Password Fir Se Daloo">
-  <button onclick="signup()">SIGNUP - ID BANAO</button>
+  <input type="date" id="suDob">
+  <input type="password" id="suPass" placeholder="New Password">
+  <input type="password" id="suPass2" placeholder="Password Fir Se">
+  <button onclick="signup()">SIGNUP</button>
   <div id="msg2"></div>
   <div class="link" onclick="showBox('loginBox')">Pehle se ID hai? Login Karo</div>
 </div>
 
-<!-- CHANGE PASSWORD BOX -->
-<div class="box hidden" id="changeBox">
+<!-- CHANGE PASSWORD -->
+<div id="changeBox" class="loginbox hidden">
   <h2>Password Change</h2>
-  <p class="sub">Purana Wala Daal Ke Naya Banao</p>
-  <input type="tel" id="chNumber" placeholder="Mobile Number (ID)" maxlength="10">
+  <p>Purana Daalo, Naya Banao</p>
+  <input type="tel" id="chNumber" placeholder="Mobile Number" maxlength="10">
   <input type="password" id="chOld" placeholder="Purana Password">
   <input type="password" id="chNew" placeholder="Naya Password">
-  <button onclick="changePass()">PASSWORD CHANGE KARO</button>
+  <button onclick="changePass()">CHANGE KARO</button>
   <div id="msg3"></div>
   <div class="link" onclick="showBox('loginBox')">Wapas Login Pe Jao</div>
 </div>
 
-<!-- HOME / DASHBOARD BOX -->
-<div class="box hidden" id="homeBox">
-  <div class="top">
-    <h2>Namaste 🙏</h2>
-    <button class="logout" onclick="logout()">Logout</button>
+<!-- TERI PURANI WEBSITE - LOGIN KE BAAD -->
+<div id="homeBox" class="hidden">
+  <div class="topbar"><span id="welcomeText">Namaste 🙏</span><button class="logout" onclick="logout()">Logout</button></div>
+  <div class="header">
+    <img src="IMG-20261118-WA0044.jpg">
+    <h1>Anuj Gour ❤️</h1>
+    <p>Indore | Instagram Star | Reels Creator</p>
+    <a class="btn insta" href="https://instagram.com/abhishek_gour_221">Instagram</a>
+    <a class="btn yt" href="https://youtube.com/@AbhishekGour-f7y">YouTube</a>
   </div>
-  <p class="sub" id="welcomeText"></p>
-  <p style="text-align:center;margin-top:15px">Tum Anuj Gour ki website me login ho gaye ho!</p>
+  <div class="card"><h3>👋 About Me</h3><p>Hi! Main Anuj Gour hu. Mujhe Reels banana, Style aur Photography pasand hai. Follow karo aur support karo! ❤️</p></div>
+  <div class="card"><h3>📸 Meri Best Photos ❤️</h3><div class="photos">
+    <img src="IMG-20261118-WA0044.jpg"><img src="IMG-20261118-WA0047.jpg">
+    <img src="IMG-20261118-WA0045.jpg"><img src="IMG-20261118-WA0046.jpg">
+  </div></div>
+  <div class="card"><h3>🎵 Mere Favourite Reels / Songs</h3>
+    <p><a href="https://youtube.com/@AbhishekGour-f7y" style="color:#ffacc5;text-decoration:none;font-weight:bold;">▶️ 1. Mera Favourite Gaana 1</a><br><br>
+    <a href="https://youtube.com/@AbhishekGour-f7y" style="color:#ffacc5;text-decoration:none;font-weight:bold;">▶️ 2. Mera Favourite Gaana 2</a><br><br>
+    <a href="https://youtube.com/@AbhishekGour-f7y" style="color:#ffacc5;text-decoration:none;">⭐ Mere YouTube Videos Dekho</a></p>
+  </div>
+  <div class="card"><h3>📞 Contact Karo</h3>
+    <input type="text" id="cName" placeholder="Tumhara Naam">
+    <input type="text" id="cNumber" placeholder="Tumhara Number">
+    <textarea id="cMsg" placeholder="Message Likho..."></textarea><br>
+    <button type="button" class="send" onclick="sendWhatsApp()">WhatsApp Pe Bhejo</button>
+  </div>
 </div>
 
 <script>
@@ -190,11 +103,8 @@ function showBox(id){
   ['loginBox','signupBox','changeBox','homeBox'].forEach(b=>document.getElementById(b).classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
 }
-
-function getUsers(){ return JSON.parse(localStorage.getItem('anuj_users')||'{}'); }
-function saveUsers(u){ localStorage.setItem('anuj_users', JSON.stringify(u)); }
-
-// SIGNUP
+function getUsers(){return JSON.parse(localStorage.getItem('anuj_users')||'{}');}
+function saveUsers(u){localStorage.setItem('anuj_users',JSON.stringify(u));}
 function signup(){
   let name=document.getElementById('suName').value.trim();
   let num=document.getElementById('suNumber').value.trim();
@@ -202,47 +112,61 @@ function signup(){
   let p1=document.getElementById('suPass').value;
   let p2=document.getElementById('suPass2').value;
   let msg=document.getElementById('msg2');
-  if(!name || !num || !dob || !p1){ msg.innerText="Saare box bharo!"; return; }
-  if(num.length!==10){ msg.innerText="Number 10 digit ka hona chahiye!"; return; }
-  if(p1!==p2){ msg.innerText="Dono password same nahi hai!"; return; }
+  if(!name||!num||!dob||!p1){msg.innerText="Saare box bharo!";return;}
+  if(num.length!==10){msg.innerText="Number 10 digit ka hona chahiye!";return;}
+  if(p1!==p2){msg.innerText="Dono password same nahi hai!";return;}
   let users=getUsers();
-  if(users[num]){ msg.innerText="Ye Number pehle se bana hua hai! Login karo."; return; }
-  users[num]={name:name, dob:dob, pass:p1};
-  saveUsers(users);
-  msg.className="success"; msg.innerText="ID Ban Gayi! Ab Login Karo.";
+  if(users[num]){msg.innerText="Ye Number pehle se bana hai! Login karo.";return;}
+  users[num]={name:name,dob:dob,pass:p1};saveUsers(users);
+  msg.style.color="green";msg.innerText="ID Ban Gayi! Ab Login Karo.";
   setTimeout(()=>showBox('loginBox'),1000);
 }
-
-// LOGIN
 function login(){
   let num=document.getElementById('loginNumber').value.trim();
   let pass=document.getElementById('loginPass').value;
   let msg=document.getElementById('msg');
   let users=getUsers();
   if(users[num] && users[num].pass===pass){
-    document.getElementById('welcomeText').innerText="Name: "+users[num].name+" | Number: "+num+" | Birthday: "+users[num].dob;
+    document.getElementById('welcomeText').innerText="Namaste "+users[num].name+" 🙏";
     showBox('homeBox');
-  } else {
-    msg.innerText="Galat ID ya Password! Pehle Signup karo.";
-  }
-
-// CHANGE PASSWORD
+  } else {msg.innerText="Galat ID ya Password! Pehle Signup karo.";}
+}
 function changePass(){
   let num=document.getElementById('chNumber').value.trim();
   let oldP=document.getElementById('chOld').value;
   let newP=document.getElementById('chNew').value;
   let msg=document.getElementById('msg3');
   let users=getUsers();
-  if(!users[num]){ msg.innerText="Ye ID bani hi nahi hai! Pehle Signup karo."; return; }
-  if(users[num].pass!==oldP){ msg.innerText="Purana password galat hai!"; return; }
-  if(!newP){ msg.innerText="Naya password daalo!"; return; }
-  users[num].pass=newP;
-  saveUsers(users);
-  msg.className="success"; msg.innerText="Password Change Ho Gaya! Ab naye se Login karo.";
+  if(!users[num]){msg.innerText="Ye ID bani hi nahi hai! Pehle Signup karo.";return;}
+  if(users[num].pass!==oldP){msg.innerText="Purana password galat hai!";return;}
+  if(!newP){msg.innerText="Naya password daalo!";return;}
+  users[num].pass=newP;saveUsers(users);
+  msg.style.color="green";msg.innerText="Password Change Ho Gaya!";
   setTimeout(()=>showBox('loginBox'),1000);
 }
-
-function logout(){ showBox('loginBox'); }
+function logout(){showBox('loginBox');}
+function sendWhatsApp(){
+  let name=document.getElementById('cName').value;
+  let number=document.getElementById('cNumber').value;
+  let msg=document.getElementById('cMsg').value;
+  number=number.replace(/[^0-9]/g,'');
+  if(number.length===12 && number.startsWith('91')){number=number.substring(2);}
+  if(number.length===10){number='91'+number;}
+  let text="Hi, Main "+name+" hu. "+msg;
+  let url="https://wa.me/"+number+"?text="+encodeURIComponent(text);
+  window.open(url,"_blank");
+}
+var startTime=Date.now();
+var roseInterval=setInterval(function(){
+  if(Date.now()-startTime>2000){clearInterval(roseInterval);return;}
+  var r=document.createElement('div');
+  r.className='rose';r.innerHTML='🌹';
+  r.style.left=Math.random()*100+'vw';
+  r.style.fontSize=(18+Math.random()*15)+'px';
+  r.style.animationDuration=(2+Math.random()*2)+'s';
+  document.body.appendChild(r);
+  setTimeout(()=>{r.remove();},4000);
+},200);
 </script>
 </body>
 </html>
