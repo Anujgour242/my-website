@@ -121,15 +121,14 @@ function signup(){
   msg.style.color="green";msg.innerText="ID Ban Gayi! Ab Login Karo.";
   setTimeout(()=>showBox('loginBox'),1000);
 }
-function login(){
-  let num=document.getElementById('loginNumber').value.trim();
-  let pass=document.getElementById('loginPass').value;
-  let msg=document.getElementById('msg');
-  let users=getUsers();
-  if(users[num] && users[num].pass===pass){
-    document.getElementById('welcomeText').innerText="Namaste "+users[num].name+" 🙏";
+// Page khulte hi check karo - pehle se login hai kya?
+window.onload = function(){
+  let loggedNum = localStorage.getItem('anuj_login');
+  let users = getUsers();
+  if(loggedNum && users[loggedNum]){
+    document.getElementById('welcomeText').innerText="Namaste "+users[loggedNum].name+" 🙏";
     showBox('homeBox');
-  } else {msg.innerText="Galat ID ya Password! Pehle Signup karo.";}
+  }
 }
 function changePass(){
   let num=document.getElementById('chNumber').value.trim();
