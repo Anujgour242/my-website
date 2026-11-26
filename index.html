@@ -2,106 +2,159 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anuj Gour Website</title>
+<title>Anuj Gour - Portfolio</title>
 <style>
-body{background:black; color:white; font-family:Arial; margin:0; padding:20px;}
-.box{background:white; color:black; padding:20px; border-radius:15px; max-width:350px; margin:50px auto; text-align:center;}
-input{width:90%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:8px;}
-button{width:95%; padding:12px; background:#0055ff; color:white; border:none; border-radius:8px; font-size:16px;}
-a{color:#0055ff; display:block; margin-top:10px; cursor:pointer; text-decoration:none;}
-#msg{color:red; margin-top:10px;}
+body{margin:0;font-family:Arial;background:#0f172a;color:white;text-align:center;overflow-x:hidden}
+.box{padding:30px 20px;position:relative;z-index:2}
+h1{font-size:28px;margin:10px 0}
+p{color:#cbd5e1}
+span{color:#facc15}
+.btn{display:block;background:#E1306C;color:white;padding:15px;margin:12px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:18px}
+.btn2{background:#25D366}
+.btn3{background:white;color:black}
+.btn4{background:#FF0000}
+.card{background:#1e293b;padding:20px;margin:12px;border-radius:15px;text-align:left}
+img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid #facc15}
+.gallery img{width:110px;height:140px;border-radius:15px;border:2px solid white;margin:5px;object-fit:cover}
+input{width:90%;padding:12px;margin:8px;border-radius:10px;border:none;font-size:15px}
+button{width:95%;padding:13px;background:#0055ff;color:white;border:none;border-radius:10px;font-size:16px;font-weight:bold;margin-top:5px}
+a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:none}
+.rose{position:fixed;top:-50px;z-index:999;font-size:28px;animation:fall linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0.9}}
+.loginbox{background:white;color:black;padding:20px;border-radius:15px;max-width:350px;margin:50px auto;text-align:center}
+.loginbox input{border:1px solid #ccc}
+.loginbox p{color:#666}
+#msg,#msg2{color:red}
 </style>
 </head>
 <body>
+<div id="rain"></div>
 
-<div id="loginBox" class="box">
+<!-- LOGIN -->
+<div id="loginBox" class="loginbox">
   <h2>Login Karo 👋</h2>
   <p>Anuj Gour Website me Entry ke liye</p>
   <input id="loginNumber" placeholder="Mobile Number (ID)" type="number">
   <input id="loginPass" placeholder="Password" type="password">
   <button onclick="login()">LOGIN</button>
   <a onclick="showBox('signupBox')">Naya ho? Signup Karo</a>
+  <a onclick="forgotPassword()" style="color:red;">Password Bhool Gaye? Yaha Click Karo</a>
   <p id="msg"></p>
-  <hr>
-  <p style="font-size:13px; color:grey;">Test ke liye - ID: 9999999999 <br> Password: 1234</p>
+  <p style="font-size:13px;">Test ke liye - ID: 9999999999<br>Password: 1234</p>
 </div>
 
-<div id="signupBox" class="box" style="display:none;">
+<!-- SIGNUP - PEHLE WALA -->
+<div id="signupBox" class="loginbox" style="display:none;">
   <h2>Signup Karo</h2>
-  <input id="signName" placeholder="Apna Naam">
+  <input id="signName" placeholder="Full Name">
   <input id="signNumber" placeholder="Mobile Number" type="number">
-  <input id="signPass" placeholder="Password Banao" type="password">
+  <input id="signDOB" type="date">
+  <input id="signPass" placeholder="Create Password" type="password">
+  <input id="signPass2" placeholder="Confirm Password" type="password">
   <button onclick="signup()">SIGNUP</button>
-  <a onclick="showBox('loginBox')">Pehle se account hai? Login Karo</a>
+  <a onclick="showBox('loginBox')">Pehle se ID hai? Login Karo</a>
   <p id="msg2"></p>
 </div>
 
-<div id="homeBox" class="box" style="display:none;">
-  <h2 id="welcomeText">Namaste 🙏</h2>
-  <p>Login ho gaya! Ab tum andar ho.</p>
+<!-- HOME - PEHLE WALA PORTFOLIO -->
+<div id="homeBox" style="display:none;">
+<div class="box">
+  <img src="Polish_20241108_185934440.jpg">
+  <p>NAMASTE 🙏</p>
+  <h1>I Am <span id="welcomeText">Anuj Gour</span></h1>
+  <p>Indore, Madhya Pradesh | Student | Creator | Learner</p>
+  <a class="btn" href="https://instagram.com/abhishek_gour_221">📸 Instagram Follow Karo</a>
+  <a class="btn btn2" href="https://wa.me/919340535129">💬 WhatsApp Karo</a>
+  <a class="btn btn3" href="https://github.com/Anujgour242">💻 Mera GitHub</a>
+  <a class="btn btn4" href="https://youtube.com/@AbhishekGour-f7y">▶️ YouTube - Smart Abhishek Gour</a>
+
+  <div class="card"><h3>❤️ Mere Baare Me</h3><p>Main Anuj hu, Indore se. Mujhe nayi cheeze seekhna aur website banana pasand hai. Ye meri pehli live website hai.</p></div>
+  <div class="card"><h3>⭐ Meri Skills</h3><p>🌐 HTML Website • 💻 GitHub • 📸 Instagram Content • 🚀 Learning New Tech</p></div>
+  <div class="card"><h3>📸 Photo Gallery</h3><div class="gallery">
+  <img src="IMG-20261118-WA0044.jpg">
+  <img src="IMG-20261118-WA0047.jpg">
+  <img src="IMG-20261118-WA0045.jpg">
+  <img src="IMG-20261118-WA0046.jpg">
+  </div><p style="font-size:13px;">Meri Best Photos ❤️</p></div>
   <button onclick="logout()" style="background:red;">LOGOUT</button>
+  <p style="margin-top:30px;font-size:13px;">Made with ❤️ by Anuj Gour</p>
+</div>
 </div>
 
 <script>
 function getUsers(){ return JSON.parse(localStorage.getItem('anuj_users') || '{}'); }
 function saveUsers(u){ localStorage.setItem('anuj_users', JSON.stringify(u)); }
-
 function showBox(id){
   document.getElementById('loginBox').style.display='none';
   document.getElementById('signupBox').style.display='none';
   document.getElementById('homeBox').style.display='none';
   document.getElementById(id).style.display='block';
 }
-
 function signup(){
   let name=document.getElementById('signName').value.trim();
   let num=document.getElementById('signNumber').value.trim();
+  let dob=document.getElementById('signDOB').value;
   let pass=document.getElementById('signPass').value;
-  if(!name || !num || !pass){ document.getElementById('msg2').innerText="Sab bharo bhai!"; return; }
+  let pass2=document.getElementById('signPass2').value;
+  if(!name || !num || !dob || !pass){ document.getElementById('msg2').innerText="Sab bharo bhai!"; return; }
+  if(pass !== pass2){ document.getElementById('msg2').innerText="Dono Password same nahi hai!"; return; }
   let users=getUsers();
-  users[num]={name:name, pass:pass};
+  if(users[num]){ document.getElementById('msg2').innerText="Ye Number pehle se bana hai! Login karo."; return; }
+  users[num]={name:name, dob:dob, pass:pass};
   saveUsers(users);
-  alert("Signup ho gaya! Ab isi ID-Password se Login karo");
+  alert("Signup ho gaya! Ab Login karo");
   showBox('loginBox');
   document.getElementById('loginNumber').value=num;
 }
-
 function login(){
   let num=document.getElementById('loginNumber').value.trim();
   let pass=document.getElementById('loginPass').value;
   let users=getUsers();
-
-  // TEST LOGIN - hamesha chalega
   if(num=="9999999999" && pass=="1234"){
     localStorage.setItem('anuj_login', num);
-    document.getElementById('welcomeText').innerText="Namaste Test User 🙏";
-    showBox('homeBox');
-    return;
+    document.getElementById('welcomeText').innerText="Test User 🙏";
+    showBox('homeBox'); return;
   }
-
   if(users[num] && users[num].pass===pass){
     localStorage.setItem('anuj_login', num);
-    document.getElementById('welcomeText').innerText="Namaste "+users[num].name+" 🙏";
+    document.getElementById('welcomeText').innerText=users[num].name+" 🙏";
     showBox('homeBox');
   } else {
     document.getElementById('msg').innerText="Galat ID ya Password! Pehle Signup karo.";
   }
 }
-
-function logout(){
-  localStorage.removeItem('anuj_login');
-  showBox('loginBox');
+function forgotPassword(){
+  let num=prompt("Apna Mobile Number dalo:");
+  if(!num) return;
+  let users=getUsers();
+  if(!users[num]){ alert("Ye number bana hi nahi hai! Pehle Signup karo."); return; }
+  let newPass=prompt("Naya Password dalo:");
+  if(!newPass) return;
+  users[num].pass=newPass; saveUsers(users);
+  alert("Password badal gaya! Ab isi naye password se Login karo.");
 }
-
+function logout(){ localStorage.removeItem('anuj_login'); showBox('loginBox'); }
 window.onload=function(){
   let logged=localStorage.getItem('anuj_login');
   let users=getUsers();
   if(logged && (users[logged] || logged=="9999999999")){
     let nm = logged=="9999999999" ? "Test User" : users[logged].name;
-    document.getElementById('welcomeText').innerText="Namaste "+nm+" 🙏";
+    document.getElementById('welcomeText').innerText=nm+" 🙏";
     showBox('homeBox');
   }
 }
+function createRose(){
+  var rose=document.createElement('div');
+  rose.className='rose';
+  var flowers=['🌹','🌹','🌹','🌸','🌺','❤️','🌹'];
+  rose.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+  rose.style.left=Math.random()*100+'vw';
+  rose.style.fontSize=(20+Math.random()*25)+'px';
+  rose.style.animationDuration=(2.5+Math.random()*3)+'s';
+  document.getElementById('rain').appendChild(rose);
+  setTimeout(()=>{ rose.remove(); }, 6000);
+}
+setInterval(createRose, 250);
 </script>
 </body>
 </html>
