@@ -2,24 +2,36 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anuj Gour - Portfolio</title>
+<title>Anuj Gour ❤️</title>
 <style>
-body{margin:0;font-family:Arial;background:#0f172a;color:white;text-align:center;overflow-x:hidden}
-.box{padding:30px 20px;position:relative;z-index:2}
-h1{font-size:28px;margin:10px 0}
-p{color:#cbd5e1}
-span{color:#facc15}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#E1306C;color:white;padding:14px;margin:12px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:17px}
-.btn img{width:28px;height:28px;border-radius:8px;border:none;object-fit:contain;background:white;padding:2px}
+body{margin:0;font-family:Arial;background:#0a0a0a;color:white;text-align:center;overflow-x:hidden}
+.top{background:linear-gradient(#ff2d55,#b8003a,#0a0a0a);padding:35px 20px 25px}
+.dp{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid white}
+h1{margin:10px 0 5px;font-size:28px}
+.sub{color:#ffdce5;font-size:14px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:25px;color:white;text-decoration:none;font-weight:bold;margin:10px 5px;font-size:15px}
+.pill img{width:22px;height:22px;background:white;border-radius:50%;padding:2px}
+.pink{background:#e91e63}
+.red{background:#ff0000}
+.card{background:#1a1a1a;padding:18px;margin:12px;border-radius:15px;text-align:left}
+.card h3{color:#ff4d6d;margin:0 0 10px}
+.card p{color:#ddd;font-size:15px;line-height:1.5;margin:0}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.photos img{width:100%;height:150px;object-fit:cover;border-radius:12px}
+.song{color:#ffcc00;font-weight:bold;margin:12px 0}
+.song a{color:#ffcc00}
+
+/* 4 BUTTON - EK KE NICHE EK, LEFT ICON */
+.btn{display:flex;align-items:center;background:#E1306C;color:white;padding:15px 20px;margin:12px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:17px;text-align:left}
+.btn img{width:34px;height:34px;background:white;border-radius:10px;padding:3px;margin-right:15px;object-fit:contain}
 .btn2{background:#25D366}
 .btn3{background:white;color:black}
 .btn4{background:#FF0000}
-.card{background:#1e293b;padding:20px;margin:12px;border-radius:15px;text-align:left}
-.dp{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid #facc15}
-.gallery img{width:110px;height:140px;border-radius:15px;border:2px solid white;margin:5px;object-fit:cover}
-input{width:90%;padding:12px;margin:8px;border-radius:10px;border:none;font-size:15px}
-button{width:95%;padding:13px;background:#0055ff;color:white;border:none;border-radius:10px;font-size:16px;font-weight:bold;margin-top:5px}
-a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:none}
+
+input,textarea{width:92%;padding:13px;margin:8px 0;border-radius:10px;border:none;font-size:15px}
+button{width:95%;padding:13px;background:#0055ff;color:white;border:none;border-radius:10px;font-size:16px;font-weight:bold}
+.send{background:#ffcc00;color:black}
+a{color:#facc15;text-decoration:none}
 .rose{position:fixed;top:-50px;z-index:999;font-size:28px;animation:fall linear forwards;pointer-events:none}
 @keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0.9}}
 .loginbox{background:white;color:black;padding:20px;border-radius:15px;max-width:350px;margin:50px auto;text-align:center}
@@ -31,7 +43,6 @@ a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:non
 <body>
 <div id="rain"></div>
 
-<!-- LOGIN -->
 <div id="loginBox" class="loginbox">
   <h2>Login Karo 👋</h2>
   <p>Anuj Gour Website me Entry ke liye</p>
@@ -44,7 +55,6 @@ a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:non
   <p style="font-size:13px;">Test - ID: 9999999999<br>Password: 1234</p>
 </div>
 
-<!-- SIGNUP -->
 <div id="signupBox" class="loginbox" style="display:none;">
   <h2>Signup Karo</h2>
   <input id="signName" placeholder="Full Name">
@@ -57,38 +67,54 @@ a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:non
   <p id="msg2"></p>
 </div>
 
-<!-- HOME -->
 <div id="homeBox" style="display:none;">
-<div class="box">
+
+<!-- UPAR WALA PINK DESIGN - TERI PHOTO WALA -->
+<div class="top">
   <img class="dp" src="Polish_20241108_185934440.jpg">
-  <p>NAMASTE 🙏</p>
-  <h1>I Am <span id="welcomeText">Anuj Gour</span></h1>
-  <p>Indore, Madhya Pradesh | Student | Creator | Learner</p>
+  <h1>Anuj Gour ❤️</h1>
+  <div class="sub">Indore | Instagram Star | Reels Creator</div>
+  <br>
+  <a class="pill pink" href="https://instagram.com/abhishek_gour_221"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram</a>
+  <a class="pill red" href="https://youtube.com/@AbhishekGour-f7y"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube</a>
+</div>
 
-  <!-- REAL ICONS WALE BUTTONS -->
-  <a class="btn" href="https://instagram.com/abhishek_gour_221">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram Follow Karo
-  </a>
-  <a class="btn btn2" href="https://wa.me/919340535129">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp Karo
-  </a>
-  <a class="btn btn3" href="https://github.com/Anujgour242">
-    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> Mera GitHub
-  </a>
-  <a class="btn btn4" href="https://youtube.com/@AbhishekGour-f7y">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube - Smart Abhishek Gour
-  </a>
+<!-- 4 BUTTON - EK KE NICHE EK -->
+<a class="btn" href="https://instagram.com/abhishek_gour_221"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram Follow Karo</a>
+<a class="btn btn2" href="https://wa.me/919340535129"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp Karo</a>
+<a class="btn btn3" href="https://github.com/Anujgour242"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> Mera GitHub</a>
+<a class="btn btn4" href="https://youtube.com/@AbhishekGour-f7y"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube - Smart Abhishek Gour</a>
 
-  <div class="card"><h3>❤️ Mere Baare Me</h3><p>Main Anuj hu, Indore se. Mujhe nayi cheeze seekhna aur website banana pasand hai. Ye meri pehli live website hai.</p></div>
-  <div class="card"><h3>⭐ Meri Skills</h3><p>🌐 HTML Website • 💻 GitHub • 📸 Instagram Content • 🚀 Learning New Tech</p></div>
-  <div class="card"><h3>📸 Photo Gallery</h3><div class="gallery">
-  <img src="IMG-20261118-WA0044.jpg">
-  <img src="IMG-20261118-WA0047.jpg">
-  <img src="IMG-20261118-WA0045.jpg">
-  <img src="IMG-20261118-WA0046.jpg">
-  </div><p style="font-size:13px;">Meri Best Photos ❤️</p></div>
-  <button onclick="logout()" style="background:red;">LOGOUT</button>
-  <p style="margin-top:30px;font-size:13px;">Made with ❤️ by Anuj Gour</p>
+<!-- ABOUT ME - MISSING WALA WAPAS -->
+<div class="card"><h3>👋 About Me</h3><p>Hi! Main Anuj Gour hu. Mujhe Reels banana, Style aur Photography pasand hai. Follow karo aur support karo! ❤️</p></div>
+
+<!-- BEST PHOTOS - MISSING WALA WAPAS -->
+<div class="card"><h3>📸 Meri Best Photos ❤️</h3>
+<div class="photos">
+<img src="IMG-20261118-WA0044.jpg">
+<img src="IMG-20261118-WA0047.jpg">
+<img src="IMG-20261118-WA0045.jpg">
+<img src="IMG-20261118-WA0046.jpg">
+</div></div>
+
+<!-- SONGS - MISSING WALA WAPAS -->
+<div class="card"><h3>🎵 Mere Favourite Reels / Songs</h3>
+<div class="song">🎶 1. Mera Favourite Gaana 1 ▶️</div>
+<div class="song">🎶 2. Mera Favourite Gaana 2 ▶️</div>
+<a href="https://youtube.com/@AbhishekGour-f7y">👉 Mere YouTube Videos Dekho</a>
+</div>
+
+<!-- CONTACT - MISSING WALA WAPAS -->
+<div class="card"><h3>📞 Contact Karo</h3>
+<input id="cName" placeholder="Tumhara Naam">
+<input id="cNumber" placeholder="Tumhara Number">
+<textarea id="cMsg" placeholder="Message Likho..."></textarea>
+<button class="send" onclick="sendWhatsApp()">WhatsApp Pe Bhejo</button>
+</div>
+
+<div style="padding:15px;">
+<button onclick="logout()" style="background:red;">LOGOUT</button>
+<p style="font-size:13px;color:#888;">Made with ❤️ by Anuj Gour | <span id="welcomeText"></span></p>
 </div>
 </div>
 
@@ -123,12 +149,12 @@ function login(){
   let users=getUsers();
   if(num=="9999999999" && pass=="1234"){
     localStorage.setItem('anuj_login', num);
-    document.getElementById('welcomeText').innerText="Test User 🙏";
+    document.getElementById('welcomeText').innerText="Test User";
     showBox('homeBox'); return;
   }
   if(users[num] && users[num].pass===pass){
     localStorage.setItem('anuj_login', num);
-    document.getElementById('welcomeText').innerText=users[num].name+" 🙏";
+    document.getElementById('welcomeText').innerText=users[num].name;
     showBox('homeBox');
   } else {
     document.getElementById('msg').innerText="Galat ID ya Password! Pehle Signup karo.";
@@ -145,17 +171,23 @@ function forgotPassword(){
   alert("Password badal gaya! Ab isi naye password se Login karo.");
 }
 function logout(){ localStorage.removeItem('anuj_login'); showBox('loginBox'); }
+function sendWhatsApp(){
+  var naam=document.getElementById('cName').value;
+  var num=document.getElementById('cNumber').value;
+  var msg=document.getElementById('cMsg').value;
+  if(naam=="" || msg==""){ alert("Bhai pehle Naam aur Message to likh de!"); return; }
+  var fullMsg="Hi Anuj! Mera naam "+naam+" hai. Mera Number: "+num+" hai. Message: "+msg;
+  window.open("https://api.whatsapp.com/send?phone=919340535129&text="+encodeURIComponent(fullMsg),'_blank');
+}
 window.onload=function(){
   let logged=localStorage.getItem('anuj_login');
   let users=getUsers();
   if(logged && (users[logged] || logged=="9999999999")){
     let nm = logged=="9999999999" ? "Test User" : users[logged].name;
-    document.getElementById('welcomeText').innerText=nm+" 🙏";
+    document.getElementById('welcomeText').innerText=nm;
     showBox('homeBox');
   }
 }
-
-/* PEHLE WALI 🌹 BARSAT - JAISI THI VAISI */
 function createRose(){
   var rose=document.createElement('div');
   rose.className='rose';
