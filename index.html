@@ -10,13 +10,16 @@ h1{font-size:28px;margin:10px 0}
 p{color:#cbd5e1}
 span{color:#facc15}
 
-/* BUTTON - AB SAB SEEDHA AYEGA */
+/* ICON AB LEFT ME HI RAHEGA - PAKKA */
 .btn{
-  display:flex;
-  align-items:center;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  text-align:left !important;
   background:#E1306C;
   color:white;
   padding:14px 15px;
+  padding-left:20px;
   margin:12px 0;
   border-radius:30px;
   text-decoration:none;
@@ -24,14 +27,16 @@ span{color:#facc15}
   font-size:17px;
 }
 .btn img{
-  width:30px;height:30px;
-  min-width:30px;
+  width:30px !important;
+  height:30px !important;
+  min-width:30px !important;
   border-radius:8px;
   background:white;
   padding:3px;
-  margin-right:15px;
+  margin:0 !important;
+  margin-right:15px !important;
   object-fit:contain;
-  border:none;
+  border:none !important;
 }
 .btn2{background:#25D366}
 .btn3{background:white;color:black}
@@ -54,7 +59,6 @@ a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:non
 <body>
 <div id="rain"></div>
 
-<!-- LOGIN -->
 <div id="loginBox" class="loginbox">
   <h2>Login Karo 👋</h2>
   <p>Anuj Gour Website me Entry ke liye</p>
@@ -67,7 +71,6 @@ a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:non
   <p style="font-size:13px;">Test - ID: 9999999999<br>Password: 1234</p>
 </div>
 
-<!-- SIGNUP -->
 <div id="signupBox" class="loginbox" style="display:none;">
   <h2>Signup Karo</h2>
   <input id="signName" placeholder="Full Name">
@@ -80,7 +83,6 @@ a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:non
   <p id="msg2"></p>
 </div>
 
-<!-- HOME -->
 <div id="homeBox" style="display:none;">
 <div class="box">
   <img class="dp" src="Polish_20241108_185934440.jpg">
@@ -88,7 +90,6 @@ a{color:#facc15;display:block;margin-top:10px;cursor:pointer;text-decoration:non
   <h1>I Am <span id="welcomeText">Anuj Gour</span></h1>
   <p>Indore, Madhya Pradesh | Student | Creator | Learner</p>
 
-  <!-- ICON EK KE NICHE EK - SEEDHI LINE ME -->
   <a class="btn" href="https://instagram.com/abhishek_gour_221">
     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram Follow Karo
   </a>
