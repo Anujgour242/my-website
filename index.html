@@ -6,8 +6,10 @@
 <style>
 body{margin:0;font-family:Arial;background:#0a0a0a;color:white;text-align:center;overflow-x:hidden}
 .top{background:linear-gradient(#ff2d55,#b8003a,#0a0a0a);padding:35px 20px 25px}
-.dp{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid white}
-h1{margin:10px 0 5px;font-size:28px}
+.dp{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #facc15}
+.namaste{color:#dbeafe;font-size:19px;letter-spacing:2px;margin:15px 0 5px}
+h1{margin:5px 0 8px;font-size:30px}
+h1 span{color:#facc15}
 .sub{color:#ffdce5;font-size:14px}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:25px;color:white;text-decoration:none;font-weight:bold;margin:10px 5px;font-size:15px}
 .pill img{width:22px;height:22px;background:white;border-radius:50%;padding:2px}
@@ -20,14 +22,11 @@ h1{margin:10px 0 5px;font-size:28px}
 .photos img{width:100%;height:150px;object-fit:cover;border-radius:12px}
 .song{color:#ffcc00;font-weight:bold;margin:12px 0}
 .song a{color:#ffcc00}
-
-/* 4 BUTTON - EK KE NICHE EK, LEFT ICON */
 .btn{display:flex;align-items:center;background:#E1306C;color:white;padding:15px 20px;margin:12px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:17px;text-align:left}
 .btn img{width:34px;height:34px;background:white;border-radius:10px;padding:3px;margin-right:15px;object-fit:contain}
 .btn2{background:#25D366}
 .btn3{background:white;color:black}
 .btn4{background:#FF0000}
-
 input,textarea{width:92%;padding:13px;margin:8px 0;border-radius:10px;border:none;font-size:15px}
 button{width:95%;padding:13px;background:#0055ff;color:white;border:none;border-radius:10px;font-size:16px;font-weight:bold}
 .send{background:#ffcc00;color:black}
@@ -69,26 +68,24 @@ a{color:#facc15;text-decoration:none}
 
 <div id="homeBox" style="display:none;">
 
-<!-- UPAR WALA PINK DESIGN - TERI PHOTO WALA -->
+<!-- UPAR - PHOTO WALA NAAM + PINK DESIGN -->
 <div class="top">
   <img class="dp" src="Polish_20241108_185934440.jpg">
-  <h1>Anuj Gour ❤️</h1>
-  <div class="sub">Indore | Instagram Star | Reels Creator</div>
+  <div class="namaste">NAMASTE 🙏</div>
+  <h1>I Am <span>Abhishek ji 🙏</span></h1>
+  <div class="sub">Indore, Madhya Pradesh | Student | Creator | Learner</div>
   <br>
   <a class="pill pink" href="https://instagram.com/abhishek_gour_221"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram</a>
   <a class="pill red" href="https://youtube.com/@AbhishekGour-f7y"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube</a>
 </div>
 
-<!-- 4 BUTTON - EK KE NICHE EK -->
 <a class="btn" href="https://instagram.com/abhishek_gour_221"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram Follow Karo</a>
 <a class="btn btn2" href="https://wa.me/919340535129"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp Karo</a>
 <a class="btn btn3" href="https://github.com/Anujgour242"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> Mera GitHub</a>
 <a class="btn btn4" href="https://youtube.com/@AbhishekGour-f7y"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube - Smart Abhishek Gour</a>
 
-<!-- ABOUT ME - MISSING WALA WAPAS -->
 <div class="card"><h3>👋 About Me</h3><p>Hi! Main Anuj Gour hu. Mujhe Reels banana, Style aur Photography pasand hai. Follow karo aur support karo! ❤️</p></div>
 
-<!-- BEST PHOTOS - MISSING WALA WAPAS -->
 <div class="card"><h3>📸 Meri Best Photos ❤️</h3>
 <div class="photos">
 <img src="IMG-20261118-WA0044.jpg">
@@ -97,14 +94,12 @@ a{color:#facc15;text-decoration:none}
 <img src="IMG-20261118-WA0046.jpg">
 </div></div>
 
-<!-- SONGS - MISSING WALA WAPAS -->
 <div class="card"><h3>🎵 Mere Favourite Reels / Songs</h3>
 <div class="song">🎶 1. Mera Favourite Gaana 1 ▶️</div>
 <div class="song">🎶 2. Mera Favourite Gaana 2 ▶️</div>
 <a href="https://youtube.com/@AbhishekGour-f7y">👉 Mere YouTube Videos Dekho</a>
 </div>
 
-<!-- CONTACT - MISSING WALA WAPAS -->
 <div class="card"><h3>📞 Contact Karo</h3>
 <input id="cName" placeholder="Tumhara Naam">
 <input id="cNumber" placeholder="Tumhara Number">
@@ -149,7 +144,7 @@ function login(){
   let users=getUsers();
   if(num=="9999999999" && pass=="1234"){
     localStorage.setItem('anuj_login', num);
-    document.getElementById('welcomeText').innerText="Test User";
+    document.getElementById('welcomeText').innerText="Abhishek ji";
     showBox('homeBox'); return;
   }
   if(users[num] && users[num].pass===pass){
@@ -183,7 +178,7 @@ window.onload=function(){
   let logged=localStorage.getItem('anuj_login');
   let users=getUsers();
   if(logged && (users[logged] || logged=="9999999999")){
-    let nm = logged=="9999999999" ? "Test User" : users[logged].name;
+    let nm = logged=="9999999999" ? "Abhishek ji" : users[logged].name;
     document.getElementById('welcomeText').innerText=nm;
     showBox('homeBox');
   }
