@@ -20,8 +20,15 @@ h1 span{color:#facc15}
 .card p{color:#ddd;font-size:15px;line-height:1.5;margin:0}
 .photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .photos img{width:100%;height:150px;object-fit:cover;border-radius:12px}
-.song{color:#ffcc00;font-weight:bold;margin:12px 0}
-.song a{color:#ffcc00}
+
+/* GAANE WALI LIST */
+.songHead{background:#0f172a;padding:14px;border-radius:12px;color:#ffcc00;font-weight:bold;font-size:16px;text-align:center;cursor:pointer;border:1px solid #ffcc00}
+.songList{display:none;margin-top:12px}
+.songItem{display:flex;align-items:center;justify-content:space-between;background:#0f172a;padding:12px 12px;margin:8px 0;border-radius:12px;text-decoration:none;color:white;border:1px solid #334155}
+.songItem b{font-size:15px}
+.songItem small{color:#94a3b8;font-size:12px;display:block}
+.playBtn{background:#ff0000;color:white;width:38px;height:38px;min-width:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+
 .btn{display:flex;align-items:center;background:#E1306C;color:white;padding:15px 20px;margin:12px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:17px;text-align:left}
 .btn img{width:34px;height:34px;background:white;border-radius:10px;padding:3px;margin-right:15px;object-fit:contain}
 .btn2{background:#25D366}
@@ -94,13 +101,31 @@ a{color:#facc15;text-decoration:none}
 <img src="IMG-20261118-WA0046.jpg">
 </div></div>
 
-<div class="card"><h3>🎵 Mere Favourite Reels / Songs</h3>
-<div class="song">🎶 1. Mera Favourite Gaana 1 ▶️</div>
-<div class="song">🎶 2. Mera Favourite Gaana 2 ▶️</div>
-<a href="https://youtube.com/@AbhishekGour-f7y">👉 Mere YouTube Videos Dekho</a>
+<!-- GAANE - TOUCH KARTE HI LIST KHULEGI -->
+<div class="card">
+<h3>🎵 Mere Favourite Reels / Songs</h3>
+<div class="songHead" onclick="toggleSongs()">🎵 Gaane Ki List Dekho 👇<br><span style="font-size:12px;color:white;">Touch Karo - 15 Gaane Hai</span></div>
+
+<div id="songList" class="songList">
+<a class="songItem" href="https://www.youtube.com/results?search_query=Kesariya+Brahmastra" target="_blank"><div><b>1. Kesariya</b><small>Arijit Singh • Brahmastra</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Tum+Se+Hi+Jab+We+Met" target="_blank"><div><b>2. Tum Se Hi</b><small>Mohit Chauhan • Jab We Met</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Raabta+Agent+Vinod" target="_blank"><div><b>3. Raabta</b><small>Arijit Singh • Agent Vinod</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Apna+Bana+Le+Bhediya" target="_blank"><div><b>4. Apna Bana Le</b><small>Arijit Singh • Bhediya</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Tera+Ban+Jaunga+Kabir+Singh" target="_blank"><div><b>5. Tera Ban Jaunga</b><small>Akshay Kumar • Kabir Singh</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Chaleya+Jawan+Shah+Rukh+Khan" target="_blank"><div><b>6. Chaleya</b><small>Arijit Singh • Jawan</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=O+Mahir+Jigra" target="_blank"><div><b>7. O Mahi O Mahi</b><small>Arijit Singh • Jigra</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Saiyaara+Title+Song" target="_blank"><div><b>8. Saiyaara</b><small>Faheem Abdullah • Saiyaara</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Tujhe+Kitna+Chahne+Lage+Kabir+Singh" target="_blank"><div><b>9. Tujhe Kitna Chahne Lage</b><small>Arijit Singh • Kabir Singh</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Shayad+Love+Aaj+Kal" target="_blank"><div><b>10. Shayad</b><small>Arijit Singh • Love Aaj Kal</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Sanam+Re+Arijit+Singh" target="_blank"><div><b>11. Sanam Re</b><small>Arijit Singh • Sanam Re</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Kalank+Title+Track" target="_blank"><div><b>12. Kalank</b><small>Arijit Singh • Kalank</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Heeriye+Jasleen+Royal" target="_blank"><div><b>13. Heeriye</b><small>Jasleen Royal • Arijit Singh</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Tu+Jaane+Na+Ajab+Prem+Ki" target="_blank"><div><b>14. Tu Jaane Na</b><small>Atif Aslam • Ajab Prem Ki</small></div><div class="playBtn">▶️</div></a>
+<a class="songItem" href="https://www.youtube.com/results?search_query=Ve+Kamleya+Rocky+Aur+Rani" target="_blank"><div><b>15. Ve Kamleya</b><small>Arijit Singh • Rocky Aur Rani</small></div><div class="playBtn">▶️</div></a>
+</div>
+<a href="https://youtube.com/@AbhishekGour-f7y" style="display:block;margin-top:12px;">👉 Mere YouTube Videos Dekho</a>
 </div>
 
-<!-- CONTACT - AB SMS WALA BHI HAI, KISI BHI NUMBER PE CHALEGA -->
 <div class="card"><h3>📞 Contact Karo</h3>
 <input id="cName" placeholder="Tumhara Naam" type="text" oninput="updateLinks()">
 <input id="cNumber" placeholder="Jisko Message Bhejna Hai - Uska Number (10 Digit)" type="number" oninput="updateLinks()">
@@ -126,22 +151,23 @@ function showBox(id){
   document.getElementById('homeBox').style.display='none';
   document.getElementById(id).style.display='block';
 }
-// AB DONO LINK APNE AAP BANENGE
+// GAANE KI LIST KHOLNA / BAND KARNA
+function toggleSongs(){
+  var list=document.getElementById('songList');
+  if(list.style.display=='block'){ list.style.display='none'; }
+  else { list.style.display='block'; }
+}
 function updateLinks(){
   var naam=document.getElementById('cName').value;
   var num=document.getElementById('cNumber').value.trim();
   var msg=document.getElementById('cMsg').value;
-  var text=encodeURIComponent("Hi! Mera Naam: "+naam+"\nMessage: "+msg);
+  var text=encodeURIComponent("Hi Anuj! 🙏\nMera Naam: "+naam+"\nMera Number: "+num+"\nMessage: "+msg);
   var smsText=encodeURIComponent("Hi! Mera Naam: "+naam+" Message: "+msg);
-  // Agar number dala hai to usi pe jayega, nahi to Anuj ke number pe
   var targetNum = num.length==10 ? "91"+num : "919340535129";
   document.getElementById('waLink').href="https://wa.me/"+targetNum+"?text="+text;
   document.getElementById('smsLink').href="sms:+91"+(num.length==10?num:"9340535129")+"?body="+smsText;
-  if(num.length==10){
-    document.getElementById('contactMsg').innerText="Ab message "+num+" pe jayega";
-  } else {
-    document.getElementById('contactMsg').innerText="";
-  }
+  if(num.length==10){ document.getElementById('contactMsg').innerText="Ab message "+num+" pe jayega"; }
+  else { document.getElementById('contactMsg').innerText=""; }
 }
 function signup(){
   let name=document.getElementById('signName').value.trim();
