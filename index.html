@@ -29,7 +29,8 @@ h1 span{color:#facc15}
 .btn4{background:#FF0000}
 input,textarea{width:92%;padding:13px;margin:8px 0;border-radius:10px;border:none;font-size:15px;background:white;color:black}
 button{width:95%;padding:13px;background:#0055ff;color:white;border:none;border-radius:10px;font-size:16px;font-weight:bold}
-.send{background:#ffcc00;color:black}
+.send{display:block;text-align:center;background:#25D366;color:white;padding:15px;border-radius:10px;font-weight:bold;font-size:16px;text-decoration:none;margin-top:10px}
+.send2{display:block;text-align:center;background:#ffcc00;color:black;padding:15px;border-radius:10px;font-weight:bold;font-size:16px;text-decoration:none;margin-top:10px}
 a{color:#facc15;text-decoration:none}
 .rose{position:fixed;top:-50px;z-index:999;font-size:28px;animation:fall linear forwards;pointer-events:none}
 @keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0.9}}
@@ -99,14 +100,15 @@ a{color:#facc15;text-decoration:none}
 <a href="https://youtube.com/@AbhishekGour-f7y">👉 Mere YouTube Videos Dekho</a>
 </div>
 
-<!-- CONTACT - AB 100% KAAM KAREGA -->
+<!-- CONTACT - AB SMS WALA BHI HAI, KISI BHI NUMBER PE CHALEGA -->
 <div class="card"><h3>📞 Contact Karo</h3>
-<input id="cName" placeholder="Tumhara Naam" type="text">
-<input id="cNumber" placeholder="Tumhara Number" type="number">
-<textarea id="cMsg" placeholder="Message Likho..." rows="3"></textarea>
-<button type="button" class="send" onclick="sendWhatsApp()">WhatsApp Pe Bhejo</button>
+<input id="cName" placeholder="Tumhara Naam" type="text" oninput="updateLinks()">
+<input id="cNumber" placeholder="Jisko Message Bhejna Hai - Uska Number (10 Digit)" type="number" oninput="updateLinks()">
+<textarea id="cMsg" placeholder="Message Likho..." rows="3" oninput="updateLinks()"></textarea>
+<a id="waLink" class="send" href="https://wa.me/919340535129?text=Hi%20Anuj!" target="_blank">WhatsApp Pe Bhejo (Jiska WhatsApp Hai)</a>
+<a id="smsLink" class="send2" href="sms:9340535129?body=Hi%20Anuj!" target="_blank">SMS Se Bhejo (Kisi Bhi Number Pe Chalega)</a>
 <p id="contactMsg"></p>
-<p style="font-size:12px;color:#888;text-align:center;">Button dabate hi WhatsApp khulega, waha se SEND dabana hoga.</p>
+<p style="font-size:12px;color:#888;text-align:center;">Agar WhatsApp me "Not Eligible" aaye to samajh lo us number pe WhatsApp nahi hai, tab SMS wala dabao.</p>
 </div>
 
 <div style="padding:15px;">
@@ -123,6 +125,23 @@ function showBox(id){
   document.getElementById('signupBox').style.display='none';
   document.getElementById('homeBox').style.display='none';
   document.getElementById(id).style.display='block';
+}
+// AB DONO LINK APNE AAP BANENGE
+function updateLinks(){
+  var naam=document.getElementById('cName').value;
+  var num=document.getElementById('cNumber').value.trim();
+  var msg=document.getElementById('cMsg').value;
+  var text=encodeURIComponent("Hi! Mera Naam: "+naam+"\nMessage: "+msg);
+  var smsText=encodeURIComponent("Hi! Mera Naam: "+naam+" Message: "+msg);
+  // Agar number dala hai to usi pe jayega, nahi to Anuj ke number pe
+  var targetNum = num.length==10 ? "91"+num : "919340535129";
+  document.getElementById('waLink').href="https://wa.me/"+targetNum+"?text="+text;
+  document.getElementById('smsLink').href="sms:+91"+(num.length==10?num:"9340535129")+"?body="+smsText;
+  if(num.length==10){
+    document.getElementById('contactMsg').innerText="Ab message "+num+" pe jayega";
+  } else {
+    document.getElementById('contactMsg').innerText="";
+  }
 }
 function signup(){
   let name=document.getElementById('signName').value.trim();
@@ -168,24 +187,6 @@ function forgotPassword(){
   alert("Password badal gaya! Ab isi naye password se Login karo.");
 }
 function logout(){ localStorage.removeItem('anuj_login'); showBox('loginBox'); }
-
-// CONTACT FIX - AB YE PAKKA CHALEGA
-function sendWhatsApp(){
-  var naam=document.getElementById('cName').value.trim();
-  var num=document.getElementById('cNumber').value.trim();
-  var msg=document.getElementById('cMsg').value.trim();
-  if(naam=="" || msg==""){
-    document.getElementById('contactMsg').innerText="Bhai pehle Naam aur Message to likh de!";
-    document.getElementById('contactMsg').style.color="red";
-    return;
-  }
-  var fullMsg="Hi Anuj! 🙏\nMera Naam: "+naam+"\nMera Number: "+num+"\nMessage: "+msg;
-  var url="https://wa.me/919340535129?text="+encodeURIComponent(fullMsg);
-  document.getElementById('contactMsg').innerText="WhatsApp khul raha hai... waha SEND daba dena!";
-  document.getElementById('contactMsg').style.color="#25D366";
-  // Seedha WhatsApp kholega
-  window.location.href=url;
-}
 window.onload=function(){
   let logged=localStorage.getItem('anuj_login');
   let users=getUsers();
